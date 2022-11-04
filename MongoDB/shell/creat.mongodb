@@ -1,0 +1,5 @@
+use("Test")
+db.categories.insertOne({
+    name: "Áo sơ mi",
+    description: "Áo",
+})
