@@ -5,6 +5,7 @@ mongoose.connect("mongodb://localhost:27017/Test");
 try {
   Product.find()
     .populate("category")
+    .populate("supplier")
     .then((result) => {
       console.log(result);
     });

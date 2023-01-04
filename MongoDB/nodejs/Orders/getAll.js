@@ -5,9 +5,12 @@ const { Order } = require("../models");
 mongoose.connect("mongodb://localhost:27017/Test");
 
 try {
-  Order.find().then((result) => {
-    console.log(result);
-  });
+  Order.find()
+    .populate("customer")
+    .populate("employee")
+    .then((result) => {
+      console.log(result);
+    });
 } catch (err) {
   console.log(err);
 }
